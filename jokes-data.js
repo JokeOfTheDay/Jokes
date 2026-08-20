@@ -1,5 +1,20 @@
 const jokes = [
   {
+    date: "2026-08-25",
+    setup: "Why did the carpenter build the roof for free?",
+    punchline: "It was on the house."
+  },
+  {
+    date: "2026-08-24",
+    setup: "Why is it easier to write jokes about dwarves?",
+    punchline: "Because the bar is very, very low."
+  },
+  {
+    date: "2026-08-21",
+    setup: "Why are there so little books written on penguins?",
+    punchline: "Because it's easier to write books on paper."
+  },
+  {
     date: "2026-08-20",
     setup: "Why did the frog become an alcoholic?",
     punchline: "He really loves hops."
