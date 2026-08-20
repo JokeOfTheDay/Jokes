@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A short joke every day.">
+<title>Joke of the Day</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="page">
+		<header>
+			<h1>JOKE OF THE DAY</h1>
+		</header>
+
+		<p id="date">Today</p>
+
+		<section class="card">
+			<p id="setup">Loading...</p>
+			<div class="joke-box" id="punchline-box">
+				<p id="punchline-reveal">Click here</p>
+				<p id="punchline" class="hidden"></p>
+			</div>
+
+		</section>
+
+<nav class="navigation">
+	<div class="nav-item" id="prev-btn">
+		<span class="nav-arrow">&#8592;</span>
+		<span class="nav-label">Previous</span>
+	</div>
+	<div class="nav-item hidden" id="next-btn">
+		<span class="nav-arrow">&#8594;</span>
+		<span class="nav-label">Next</span>
+	</div>
+	<div class="nav-item" id="random-btn">
+		<span class="nav-arrow">&#127922;</span>
+		<span class="nav-label">Random</span>
+	</div>
+</nav>
+
+<div class="share-container">
+	<button id="share-btn">Share this joke</button>
+</div>
+
+
+		
+		<footer>
+			<p>
+				Come back <s>tomorrow</s> some other day for another one.
+			</p>
+		</footer>
+	</main>
+	<script src="jokes-data.js"></script>
+	<script src="jokes.js"></script>
+</body>
+</html>
