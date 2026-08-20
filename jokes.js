@@ -5,116 +5,122 @@ const dateElement = document.getElementById("date");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const randomBtn = document.getElementById("random-btn");
+const todayBtn = document.getElementById("today-btn");
 const shareBtn = document.getElementById("share-btn");
 
 function dateKey(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, "0");
+	const day = String(date.getDate()).padStart(2, "0");
+	return `${year}-${month}-${day}`;
 }
 
 function formatDate(date) {
-  return new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric"
-  }).format(date);
+	return new Intl.DateTimeFormat("en-US", {
+		weekday: "long",
+		month: "long",
+		day: "numeric",
+		year: "numeric"
+	}).format(date);
 }
 
 const todayKey = dateKey(new Date());
 const availableJokes = jokes
-  .filter(joke => joke.date <= todayKey)
-  .sort((a, b) => b.date.localeCompare(a.date));
+	.filter(joke => joke.date <= todayKey)
+	.sort((a, b) => b.date.localeCompare(a.date));
 
 // Check URL for joke date parameter
 function getIndexFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-  const jokeDate = params.get("joke");
-  if (jokeDate) {
-    const index = availableJokes.findIndex(j => j.date === jokeDate);
-    if (index !== -1) return index;
-  }
-  return null;
+	const params = new URLSearchParams(window.location.search);
+	const jokeDate = params.get("joke");
+	if (jokeDate) {
+		const index = availableJokes.findIndex(j => j.date === jokeDate);
+		if (index !== -1) return index;
+	}
+	return null;
 }
 
 // Load from URL, then localStorage, then default to 0
 let currentIndex = getIndexFromUrl();
 if (currentIndex === null) {
-  currentIndex = parseInt(localStorage.getItem("lastJokeIndex")) || 0;
+	currentIndex = parseInt(localStorage.getItem("lastJokeIndex")) || 0;
 }
 if (currentIndex >= availableJokes.length) currentIndex = 0;
 
 
 function showJoke(index) {
-  const joke = availableJokes[index];
-  if (joke) {
-    setupElement.textContent = joke.setup;
-    punchlineElement.textContent = joke.punchline;
-    dateElement.textContent = formatDate(new Date(`${joke.date}T12:00:00`));
-    punchlineReveal.classList.remove("hidden");
-    punchlineElement.classList.add("hidden");
-    
-    localStorage.setItem("lastJokeIndex", index);
-  }
-  
-  if (index <= 0) {
-    nextBtn.style.display = "none";
-  } else {
-    nextBtn.style.display = "flex";
-  }
-  
-  if (index >= availableJokes.length - 1) {
-    prevBtn.style.display = "none";
-  } else {
-    prevBtn.style.display = "flex";
-  }
+	const joke = availableJokes[index];
+	if (joke) {
+		setupElement.textContent = joke.setup;
+		punchlineElement.textContent = joke.punchline;
+		dateElement.textContent = formatDate(new Date(`${joke.date}T12:00:00`));
+		punchlineReveal.classList.remove("hidden");
+		punchlineElement.classList.add("hidden");
+
+		localStorage.setItem("lastJokeIndex", index);
+	}
+
+	if (index <= 0) {
+		nextBtn.style.display = "none";
+	} else {
+		nextBtn.style.display = "flex";
+	}
+
+	if (index >= availableJokes.length - 1) {
+		prevBtn.style.display = "none";
+	} else {
+		prevBtn.style.display = "flex";
+	}
 }
 
 showJoke(currentIndex);
 
 punchlineReveal.addEventListener("click", () => {
-  punchlineReveal.classList.add("hidden");
-  punchlineElement.classList.remove("hidden");
+	punchlineReveal.classList.add("hidden");
+	punchlineElement.classList.remove("hidden");
 });
 
 prevBtn.addEventListener("click", () => {
-  if (currentIndex < availableJokes.length - 1) {
-    currentIndex++;
-    showJoke(currentIndex);
-  }
+	if (currentIndex < availableJokes.length - 1) {
+		currentIndex++;
+		showJoke(currentIndex);
+	}
 });
 
 nextBtn.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    showJoke(currentIndex);
-  }
+	if (currentIndex > 0) {
+		currentIndex--;
+		showJoke(currentIndex);
+	}
 });
 
 randomBtn.addEventListener("click", () => {
-  let randomIndex;
-  do {
-    randomIndex = Math.floor(Math.random() * availableJokes.length);
-  } while (randomIndex === currentIndex && availableJokes.length > 1);
-  currentIndex = randomIndex;
-  showJoke(currentIndex);
+	let randomIndex;
+	do {
+		randomIndex = Math.floor(Math.random() * availableJokes.length);
+	} while (randomIndex === currentIndex && availableJokes.length > 1);
+	currentIndex = randomIndex;
+	showJoke(currentIndex);
+});
+
+todayBtn.addEventListener("click", () => {
+	currentIndex = 0;
+	showJoke(currentIndex);
 });
 
 shareBtn.addEventListener("click", () => {
-  const joke = availableJokes[currentIndex];
-  const url = `${window.location.origin}${window.location.pathname}?joke=${joke.date}`;
-  
-  navigator.clipboard.writeText(url).then(() => {
-    shareBtn.textContent = "URL copied to clipboard!";
-    setTimeout(() => shareBtn.textContent = "Share this joke", 3000);
-  });
+	const joke = availableJokes[currentIndex];
+	const url = `${window.location.origin}${window.location.pathname}?joke=${joke.date}`;
+
+	navigator.clipboard.writeText(url).then(() => {
+		shareBtn.textContent = "URL copied to clipboard!";
+		setTimeout(() => shareBtn.textContent = "Share this joke", 3000);
+	});
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft" && prevBtn.style.display !== "none") prevBtn.click();
-  if (e.key === "ArrowRight" && nextBtn.style.display !== "none") nextBtn.click();
-  if (e.key === " ") punchlineReveal.click();
+	if (e.key === "ArrowLeft" && prevBtn.style.display !== "none") prevBtn.click();
+	if (e.key === "ArrowRight" && nextBtn.style.display !== "none") nextBtn.click();
+	if (e.key === " ") punchlineReveal.click();
 });
 
