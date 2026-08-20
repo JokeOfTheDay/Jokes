@@ -1,13 +1,8 @@
 const jokes = [
   {
-    date: "2026-08-31",
+    date: "2026-08-28",
     setup: "What do you call a sad coffee?",
     punchline: "A depresso."
-  },
-  {
-    date: "2026-08-28",
-    setup: "Why do dwarves have a bad sense of humor?",
-    punchline: "The jokes go over their head."
   },
   {
     date: "2026-08-27",
@@ -39,7 +34,6 @@ const jokes = [
     setup: "Why are there so little books written on penguins?",
     punchline: "Because it's easier to write books on paper."
   },
-
   {
     date: "2026-08-18",
     setup: "Why don't dwarves shop at Aldi?",
