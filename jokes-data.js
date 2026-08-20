@@ -1,5 +1,25 @@
 const jokes = [
   {
+    date: "2026-08-31",
+    setup: "What do you call a sad coffee?",
+    punchline: "A depresso."
+  },
+  {
+    date: "2026-08-28",
+    setup: "Why do dwarves have a bad sense of humor?",
+    punchline: "The jokes go over their head."
+  },
+  {
+    date: "2026-08-27",
+    setup: "Why did the man try to buy a boat?",
+    punchline: "Because it was for sail."
+  },
+  {
+    date: "2026-08-26",
+    setup: "Why do dwarves have a bad sense of humor?",
+    punchline: "The jokes go over their head."
+  },
+  {
     date: "2026-08-25",
     setup: "Why did the carpenter build the roof for free?",
     punchline: "It was on the house."
