@@ -31,14 +31,15 @@ const jokes = [
   },
   {
     date: "2026-08-21",
-    setup: "Why are there so little books written on penguins?",
-    punchline: "Because it's easier to write books on paper."
-  },
-  {
-    date: "2026-08-20",
     setup: "Why did the frog become an alcoholic?",
     punchline: "He really loves hops."
   },    
+  {
+    date: "2026-08-20",
+    setup: "Why are there so little books written on penguins?",
+    punchline: "Because it's easier to write books on paper."
+  },
+
   {
     date: "2026-08-18",
     setup: "Why don't dwarves shop at Aldi?",
