@@ -1,6 +1,8 @@
 const setupElement = document.getElementById("setup");
 const punchlineElement = document.getElementById("punchline");
 const punchlineReveal = document.getElementById("punchline-reveal");
+const explanationElement = document.getElementById("explanation");
+const explanationReveal = document.getElementById("explanation-reveal");
 const dateElement = document.getElementById("date");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
@@ -36,9 +38,12 @@ function showJoke(index) {
 	if (joke) {
 		setupElement.textContent = joke.setup;
 		punchlineElement.textContent = joke.punchline;
+		explanationElement.textContent = joke.explanation;
 		dateElement.textContent = formatDate(new Date(`${joke.date}T12:00:00`));
 		punchlineReveal.classList.remove("hidden");
 		punchlineElement.classList.add("hidden");
+		explanationReveal.classList.remove("hidden");
+		explanationElement.classList.add("hidden");
 	}
 
 	if (index <= 0) {
@@ -59,6 +64,11 @@ showJoke(currentIndex);
 punchlineReveal.addEventListener("click", () => {
 	punchlineReveal.classList.add("hidden");
 	punchlineElement.classList.remove("hidden");
+});
+
+explanationReveal.addEventListener("click", () => {
+	explanationReveal.classList.add("hidden");
+	explanationElement.classList.remove("hidden");
 });
 
 prevBtn.addEventListener("click", () => {
