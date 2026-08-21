@@ -48,15 +48,15 @@ function showJoke(index) {
 	}
 
 	if (index <= 0) {
-		nextBtn.style.display = "none";
+		nextBtn.classList.add("hidden");
 	} else {
-		nextBtn.style.display = "flex";
+		nextBtn.classList.remove("hidden");
 	}
 
 	if (index >= availableJokes.length - 1) {
-		prevBtn.style.display = "none";
+		prevBtn.classList.add("hidden");
 	} else {
-		prevBtn.style.display = "flex";
+		prevBtn.classList.remove("hidden");
 	}
 }
 
@@ -112,7 +112,7 @@ shareBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
-	if (e.key === "ArrowLeft" && prevBtn.style.display !== "none") prevBtn.click();
-	if (e.key === "ArrowRight" && nextBtn.style.display !== "none") nextBtn.click();
+	if (e.key === "ArrowLeft" && !prevBtn.classList.contains("hidden")) prevBtn.click();
+	if (e.key === "ArrowRight" && !nextBtn.classList.contains("hidden")) nextBtn.click();
 	if (e.key === " ") punchlineReveal.click();
 });
