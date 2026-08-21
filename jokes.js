@@ -29,24 +29,7 @@ const availableJokes = jokes
 	.filter(joke => joke.date <= todayKey)
 	.sort((a, b) => b.date.localeCompare(a.date));
 
-// Check URL for joke date parameter
-function getIndexFromUrl() {
-	const params = new URLSearchParams(window.location.search);
-	const jokeDate = params.get("joke");
-	if (jokeDate) {
-		const index = availableJokes.findIndex(j => j.date === jokeDate);
-		if (index !== -1) return index;
-	}
-	return null;
-}
-
-// Load from URL, then localStorage, then default to 0
-let currentIndex = getIndexFromUrl();
-if (currentIndex === null) {
-	currentIndex = parseInt(localStorage.getItem("lastJokeIndex")) || 0;
-}
-if (currentIndex >= availableJokes.length) currentIndex = 0;
-
+let currentIndex = 0;
 
 function showJoke(index) {
 	const joke = availableJokes[index];
@@ -56,8 +39,6 @@ function showJoke(index) {
 		dateElement.textContent = formatDate(new Date(`${joke.date}T12:00:00`));
 		punchlineReveal.classList.remove("hidden");
 		punchlineElement.classList.add("hidden");
-
-		localStorage.setItem("lastJokeIndex", index);
 	}
 
 	if (index <= 0) {
@@ -123,4 +104,3 @@ document.addEventListener("keydown", (e) => {
 	if (e.key === "ArrowRight" && nextBtn.style.display !== "none") nextBtn.click();
 	if (e.key === " ") punchlineReveal.click();
 });
-
