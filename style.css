@@ -113,10 +113,6 @@ header {
 	justify-content: center;
 }
 
-.explanation-box:has(> .hidden:only-child) {
-	display: none;
-}
-
 .explanation-box p {
 	margin: 0;
 	max-width: 600px;
