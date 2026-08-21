@@ -42,7 +42,7 @@ function showJoke(index) {
 		dateElement.textContent = formatDate(new Date(`${joke.date}T12:00:00`));
 		punchlineReveal.classList.remove("hidden");
 		punchlineElement.classList.add("hidden");
-		explanationReveal.classList.remove("hidden");
+		explanationReveal.classList.add("hidden");
 		explanationElement.classList.add("hidden");
 	}
 
@@ -64,6 +64,7 @@ showJoke(currentIndex);
 punchlineReveal.addEventListener("click", () => {
 	punchlineReveal.classList.add("hidden");
 	punchlineElement.classList.remove("hidden");
+	explanationReveal.classList.remove("hidden");
 });
 
 explanationReveal.addEventListener("click", () => {
