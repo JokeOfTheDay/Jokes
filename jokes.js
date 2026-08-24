@@ -116,3 +116,19 @@ document.addEventListener("keydown", (e) => {
 	if (e.key === "ArrowRight" && !nextBtn.classList.contains("hidden")) nextBtn.click();
 	if (e.key === " ") punchlineReveal.click();
 });
+
+async function updateVisitorCount() {
+    try {
+        const response = await fetch(
+            "https://my-page-counter.maartenvanbosbeke.workers.dev"
+        );
+
+        const data = await response.json();
+
+        document.getElementById("visitor-count").textContent = data.count;
+    } catch (error) {
+        console.error("Could not load visitor count:", error);
+    }
+}
+
+updateVisitorCount();
