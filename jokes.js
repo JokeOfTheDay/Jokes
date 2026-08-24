@@ -117,7 +117,6 @@ document.addEventListener("keydown", (e) => {
 	if (e.key === " ") punchlineReveal.click();
 });
 
-<script>
 async function updateVisitorCount() {
     try {
         const response = await fetch(
@@ -133,4 +132,3 @@ async function updateVisitorCount() {
 }
 
 updateVisitorCount();
-</script>
