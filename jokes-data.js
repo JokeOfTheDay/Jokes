@@ -1,5 +1,47 @@
 const jokes = [
   {
+    date: "2026-09-08",
+    setup: "What does t-shirt stand for?",
+    punchline: "Tyrannosaurus Shirt. Because of the arms.",
+    explanation: "T-Rex is short for Tyrannosaurus Rex. T-Rexes famously have tiny, useless arms—just like the short sleeves of a t-shirt."
+  },
+  {
+    date: "2026-09-07",
+    setup: "How come the developer did not get any questions from project managers?",
+    punchline: "The developer was on vacation.",
+    explanation: "Developers on vacation are unreachable by definition. Project managers can't ask questions if there's no one to answer them."
+  },
+  {
+    date: "2026-09-04",
+    setup: "Why do cemeteries have fences?",
+    punchline: "People are dying to get in.",
+    explanation: "'Dying to get in' means both desperately wanting to enter and literally dying to become a cemetery resident."
+  },
+  {
+    date: "2026-09-03",
+    setup: "What did the ocean say to the beach?",
+    punchline: "Nothing, it just waved.",
+    explanation: "'Waved' sounds like 'waved hello' but the ocean literally makes waves. It can't speak, so it just waves."
+  },
+  {
+    date: "2026-09-02",
+    setup: "What's the difference between a business analyst and a bus driver?",
+    punchline: "A bus driver actually feels bad when someone ends up underneath the bus.",
+    explanation: "When someone ends up under the bus for a normal bus driver, it happens by accident and the driver will show remorse. Some business analysts don't even know the meaning of the word 'remorse'."
+  },
+  {
+    date: "2026-09-01",
+    setup: "How many PMs does it take to change a lightbulb?",
+    punchline: "None. They'll just keep adding developers until it's fixed by itself.",
+    explanation: "A common PM approach is to add more people to a late project, hoping the problem resolves itself instead of actually fixing the root cause."
+  },
+  {
+    date: "2026-08-31",
+    setup: "What's the fastest thing in the office?",
+    punchline: "A business analyst when he sees the chance to throw a developer under a bus.",
+    explanation: "'Throwing someone under the bus' means blaming others for problems. The joke implies BAs are extremely quick to shift blame to developers. Or anyone else in their line-of-sight. Or just anyone else they can think of."
+  },
+  {
     date: "2026-08-28",
     setup: "What do you call a sad coffee?",
     punchline: "A depresso.",
