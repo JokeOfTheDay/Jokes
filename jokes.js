@@ -10,6 +10,8 @@ const nextBtn = document.getElementById("next-btn");
 const randomBtn = document.getElementById("random-btn");
 const todayBtn = document.getElementById("today-btn");
 const shareBtn = document.getElementById("share-btn");
+const dundunduuuun = new Audio("sounds/dundunduuuuun.mp4");
+let imageClickCount = 0;
 
 function dateKey(date) {
 	const year = date.getFullYear();
@@ -36,15 +38,25 @@ let currentIndex = 0;
 
 function showJoke(index) {
 	const joke = availableJokes[index];
+	imageClickCount = 0;
+
 	if (joke) {
 		setupElement.textContent = joke.setup;
-		punchlineElement.textContent = joke.punchline;
+
+		if (Array.isArray(joke.image)) {
+			punchlineElement.textContent = joke.punchline; // Will be replaced on click
+		} else {
+			punchlineElement.textContent = joke.punchline;
+		}
+
 		explanationElement.textContent = joke.explanation;
 		dateElement.textContent = formatDate(new Date(`${joke.date}T12:00:00`));
 		punchlineReveal.classList.remove("hidden");
 		punchlineElement.classList.add("hidden");
 		explanationBox.classList.add("hidden");
 		explanationElement.classList.add("hidden");
+		explanationReveal.classList.remove("hidden");
+
 	}
 
 	if (index <= 0) {
@@ -63,9 +75,19 @@ function showJoke(index) {
 showJoke(currentIndex);
 
 punchlineReveal.addEventListener("click", () => {
-	punchlineReveal.classList.add("hidden");
-	punchlineElement.classList.remove("hidden");
-	explanationBox.classList.remove("hidden");
+	const joke = availableJokes[currentIndex];
+
+	if (joke.image) {
+		imageClickCount = 1;
+		dundunduuuun.play();
+		punchlineElement.innerHTML = `<img src="${joke.image[0]}" alt="punchline" class="punchline-image fullscreen">`;
+		punchlineReveal.classList.add("hidden");
+		punchlineElement.classList.remove("hidden");
+	} else {
+		punchlineReveal.classList.add("hidden");
+		punchlineElement.classList.remove("hidden");
+		explanationBox.classList.remove("hidden");
+	}
 });
 
 explanationReveal.addEventListener("click", () => {
@@ -111,24 +133,29 @@ shareBtn.addEventListener("click", () => {
 	});
 });
 
-document.addEventListener("keydown", (e) => {
-	if (e.key === "ArrowLeft" && !prevBtn.classList.contains("hidden")) prevBtn.click();
-	if (e.key === "ArrowRight" && !nextBtn.classList.contains("hidden")) nextBtn.click();
-	if (e.key === " ") punchlineReveal.click();
+document.addEventListener("click", (e) => {
+	const img = e.target;
+	if (img.classList.contains("punchline-image") && img.classList.contains("fullscreen")) {
+		const joke = availableJokes[currentIndex];
+		img.src = joke.image[1];
+		img.classList.remove("fullscreen");
+		explanationBox.classList.remove("hidden");
+	}
 });
 
+
 async function updateVisitorCount() {
-    try {
-        const response = await fetch(
-            "https://my-page-counter.maartenvanbosbeke.workers.dev"
-        );
+	try {
+		const response = await fetch(
+			"https://my-page-counter.maartenvanbosbeke.workers.dev"
+		);
 
-        const data = await response.json();
+		const data = await response.json();
 
-        document.getElementById("visitor-count").textContent = data.count;
-    } catch (error) {
-        console.error("Could not load visitor count:", error);
-    }
+		document.getElementById("visitor-count").textContent = data.count;
+	} catch (error) {
+		console.error("Could not load visitor count:", error);
+	}
 }
 
 updateVisitorCount();

@@ -1,5 +1,11 @@
 const jokes = [
   {
+    date: "2026-09-09",
+    setup: "How many PMs does it take to change a lightbulb?",
+    punchline: "None. They'll just keep adding developers until it's fixed by itself.",
+    explanation: "A common PM approach is to add more people to a late project, hoping the problem resolves itself instead of actually fixing the root cause."
+  },
+  {
     date: "2026-09-08",
     setup: "What does t-shirt stand for?",
     punchline: "Tyrannosaurus Shirt. Because of the arms.",
@@ -31,9 +37,10 @@ const jokes = [
   },
   {
     date: "2026-09-01",
-    setup: "How many PMs does it take to change a lightbulb?",
-    punchline: "None. They'll just keep adding developers until it's fixed by itself.",
-    explanation: "A common PM approach is to add more people to a late project, hoping the problem resolves itself instead of actually fixing the root cause."
+    setup: "Who did we miss the past three weeks at Sofico? (make sure your sound is on before clicking the button below!)",
+  image: ["images/PAMA3.png", "images/PAMA.png"],
+    punchline: "PAUL IS BACK!",
+    explanation: "Paul is back from holidays so we've missed him (with everything we've been throwing at him...)"
   },
   {
     date: "2026-08-31",
