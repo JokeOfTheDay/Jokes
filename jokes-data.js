@@ -1,5 +1,10 @@
 const jokes = [
   {
+    date: "2026-09-10",
+    setup: "What's the worst thing about autocorrect?",
+    punchline: "Telling someone they can go duck themselves.",
+    explanation: "The joke plays on autocorrect replacing the swear word 'f*ck' with 'duck', so you end up telling someone to 'go duck themselves' instead of the intended insult."
+  },  {
     date: "2026-09-09",
     setup: "How many PMs does it take to change a lightbulb?",
     punchline: "None. They'll just keep adding developers until it's fixed by itself.",
