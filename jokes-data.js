@@ -20,7 +20,7 @@ const jokes = [
     date: "2026-09-07",
     setup: "How come the developer did not get any questions from project managers?",
     punchline: "The developer was on vacation.",
-    explanation: "Developers on vacation are unreachable by definition. Project managers can't ask questions if there's no one to answer them."
+    explanation: "Developers on vacation are unreachable by definition. That's the only thing stopping a PM from bothering a developer."
   },
   {
     date: "2026-09-04",
