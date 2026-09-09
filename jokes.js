@@ -10,8 +10,13 @@ const nextBtn = document.getElementById("next-btn");
 const randomBtn = document.getElementById("random-btn");
 const todayBtn = document.getElementById("today-btn");
 const shareBtn = document.getElementById("share-btn");
+const ratingStars = document.querySelectorAll(".star");
+const averageRatingElement = document.getElementById("average-rating");
 const dundunduuuun = new Audio("sounds/dundunduuuuun.mp4");
 let imageClickCount = 0;
+
+// Rating API endpoint
+const RATING_API = "https://joke-ratings.maartenvanbosbeke.workers.dev";
 
 function dateKey(date) {
 	const year = date.getFullYear();
@@ -36,6 +41,79 @@ const availableJokes = jokes
 
 let currentIndex = 0;
 
+// Get user's stored rating for a joke
+function getUserRating(jokeDate) {
+	const stored = localStorage.getItem(`joke-rating-${jokeDate}`);
+	return stored ? parseInt(stored) : null;
+}
+
+// Store user's rating for a joke
+function storeUserRating(jokeDate, rating) {
+	localStorage.setItem(`joke-rating-${jokeDate}`, rating);
+}
+
+// Update the star display based on current rating
+function updateStarDisplay(rating) {
+	ratingStars.forEach(star => {
+		const starValue = parseInt(star.getAttribute("data-value"));
+		if (rating && starValue <= rating) {
+			star.classList.add("active");
+		} else {
+			star.classList.remove("active");
+		}
+	});
+}
+
+// Fetch and display average rating for a joke
+async function fetchAndDisplayAverageRating(jokeDate) {
+	try {
+		const response = await fetch(`${RATING_API}?date=${jokeDate}`);
+		const data = await response.json();
+
+		if (data.average && data.count > 0) {
+			const average = data.average.toFixed(1);
+			const count = data.count;
+			averageRatingElement.innerHTML = `
+				<div>
+					<div class="stars-display">
+						<span class="yellow-star">★</span>
+						<span>${average} / 5</span>
+					</div>
+					<div class="rating-text">(${count} ${count === 1 ? "vote" : "votes"})</div>
+				</div>
+			`;
+		} else {
+			averageRatingElement.innerHTML = "<div><div class=\"rating-text\">No votes yet</div></div>";
+		}
+	} catch (error) {
+		console.error("Could not load average rating:", error);
+		averageRatingElement.innerHTML = "<div><div class=\"rating-text\">No votes yet</div></div>";
+	}
+}
+
+// Submit a rating to the API
+async function submitRating(jokeDate, rating) {
+	try {
+		const response = await fetch(RATING_API, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({
+				date: jokeDate,
+				rating: rating
+			})
+		});
+
+		if (response.ok) {
+			storeUserRating(jokeDate, rating);
+			await fetchAndDisplayAverageRating(jokeDate);
+		}
+	} catch (error) {
+		console.error("Could not submit rating:", error);
+	}
+}
+
 function showJoke(index) {
 	const joke = availableJokes[index];
 	imageClickCount = 0;
@@ -57,6 +135,10 @@ function showJoke(index) {
 		explanationElement.classList.add("hidden");
 		explanationReveal.classList.remove("hidden");
 
+		// Load user's previous rating and average rating for this joke
+		const userRating = getUserRating(joke.date);
+		updateStarDisplay(userRating);
+		fetchAndDisplayAverageRating(joke.date);
 	}
 
 	if (index <= 0) {
@@ -130,6 +212,20 @@ shareBtn.addEventListener("click", () => {
 	navigator.clipboard.writeText(url).then(() => {
 		shareBtn.textContent = "URL copied to clipboard!";
 		setTimeout(() => shareBtn.textContent = "Share this joke", 3000);
+	});
+});
+
+// Star rating functionality
+ratingStars.forEach(star => {
+	star.addEventListener("click", (e) => {
+		const rating = parseInt(e.target.getAttribute("data-value"));
+		const joke = availableJokes[currentIndex];
+		
+		// Update visual display immediately
+		updateStarDisplay(rating);
+		
+		// Submit rating to API
+		submitRating(joke.date, rating);
 	});
 });
 
