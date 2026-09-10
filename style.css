@@ -247,13 +247,14 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1.5rem;
+	gap: 2rem;
 	flex-wrap: wrap;
 }
 
 .stars {
 	display: flex;
 	gap: 0.5rem;
+	justify-content: center;
 }
 
 .star {
@@ -287,15 +288,14 @@ header {
 	font-size: 0.95rem;
 	color: #666;
 	font-weight: 500;
-	min-width: 120px;
-	text-align: left;
+	text-align: center;
+	flex-shrink: 0;
 }
 
 .average-rating .stars-display {
 	display: flex;
 	gap: 0.3rem;
 	align-items: center;
-	margin-top: 0.3rem;
 }
 
 .average-rating .yellow-star {
