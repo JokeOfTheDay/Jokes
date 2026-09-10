@@ -51,7 +51,7 @@ export default {
 				);
 			}
 
-			// POST: Submit a new rating
+			// POST: Submit a new rating or update existing
 			if (request.method === 'POST') {
 				const body = await request.json();
 				const { date, rating } = body;
@@ -63,14 +63,26 @@ export default {
 					);
 				}
 
-				// Get user IP for basic duplicate prevention
+				// Get user IP for identifying users
 				const userIp = request.headers.get('cf-connecting-ip') || 'unknown';
 				const timestamp = new Date().toISOString();
 
-				// Insert the rating
-				await env.votes_db.prepare(
-					`INSERT INTO ratings (date, rating, user_ip, created_at) VALUES (?, ?, ?, ?)`
-				).bind(date, rating, userIp, timestamp).run();
+				// Check if this user already voted on this joke
+				const { results: existingVote } = await env.votes_db.prepare(
+					`SELECT id FROM ratings WHERE date = ? AND user_ip = ?`
+				).bind(date, userIp).all();
+
+				if (existingVote && existingVote.length > 0) {
+					// Update existing vote
+					await env.votes_db.prepare(
+						`UPDATE ratings SET rating = ?, created_at = ? WHERE date = ? AND user_ip = ?`
+					).bind(rating, timestamp, date, userIp).run();
+				} else {
+					// Insert new rating
+					await env.votes_db.prepare(
+						`INSERT INTO ratings (date, rating, user_ip, created_at) VALUES (?, ?, ?, ?)`
+					).bind(date, rating, userIp, timestamp).run();
+				}
 
 				// Fetch updated average
 				const { results } = await env.votes_db.prepare(

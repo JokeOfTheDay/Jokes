@@ -216,6 +216,35 @@ shareBtn.addEventListener("click", () => {
 });
 
 // Star rating functionality
+ratingStars.forEach((star, index) => {
+	// Hover effect: highlight star and all previous stars
+	star.addEventListener("mouseenter", (e) => {
+		const hoverValue = parseInt(e.target.getAttribute("data-value"));
+		ratingStars.forEach(s => {
+			const starValue = parseInt(s.getAttribute("data-value"));
+			if (starValue <= hoverValue) {
+				s.style.color = "#ffd700";
+			} else {
+				s.style.color = "#ccc";
+			}
+		});
+	});
+});
+
+// Reset stars to active state when mouse leaves the stars container
+document.getElementById("rating-stars").addEventListener("mouseleave", () => {
+	const userRating = getUserRating(availableJokes[currentIndex].date);
+	ratingStars.forEach(star => {
+		const starValue = parseInt(star.getAttribute("data-value"));
+		if (userRating && starValue <= userRating) {
+			star.style.color = "#ffd700";
+		} else {
+			star.style.color = "#ccc";
+		}
+	});
+});
+
+// Click to submit rating
 ratingStars.forEach(star => {
 	star.addEventListener("click", (e) => {
 		const rating = parseInt(e.target.getAttribute("data-value"));

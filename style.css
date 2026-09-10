@@ -264,9 +264,23 @@ header {
 	user-select: none;
 }
 
-.star:hover,
 .star.active {
 	color: #ffd700;
+}
+
+/* Hover effect: color the hovered star and all stars to the left */
+.star:hover,
+.star:hover ~ .star {
+	color: #ffd700;
+}
+
+/* Restore stars after hover */
+.stars:not(:hover) .star.active {
+	color: #ffd700;
+}
+
+.stars:not(:hover) .star:not(.active) {
+	color: #ccc;
 }
 
 .average-rating {
