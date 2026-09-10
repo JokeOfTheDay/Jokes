@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="A short joke every day.">
-	<title>Joke of the Day</title>
-	<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A short joke every day.">
+<title>Joke of the Day</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<main class="page">
@@ -14,31 +14,55 @@
 		</header>
 
 		<p id="date">Today</p>
+		<div class="card-row">
 
-		<section class="card">
-			<p id="setup">Loading...</p>
-			<div class="joke-box" id="punchline-box">
-				<p id="punchline-reveal">Click here</p>
-				<div id="punchline" class="hidden"></div>
-			</div>
-			<div class="explanation-box hidden">
-				<p id="explanation-reveal">Explain this to me</p>
-				<p id="explanation" class="hidden"></p>
-			</div>
-
-			<div class="rating-container">
-				<div class="stars" id="rating-stars">
-					<span class="star" data-value="1">★</span>
-					<span class="star" data-value="2">★</span>
-					<span class="star" data-value="3">★</span>
-					<span class="star" data-value="4">★</span>
-					<span class="star" data-value="5">★</span>
+			<section class="card">
+				<p id="setup">Loading...</p>
+				<div class="joke-box" id="punchline-box">
+					<p id="punchline-reveal">Click here</p>
+					<div id="punchline" class="hidden"></div>
 				</div>
-				<div class="average-rating" id="average-rating"></div>
-			</div>
+				<div class="explanation-box hidden">
+					<p id="explanation-reveal">Explain this to me</p>
+					<p id="explanation" class="hidden"></p>
+				</div>
 
-		</section>
+				<div class="rating-container">
+					<div class="stars" id="rating-stars">
+						<span class="star" data-value="1">★</span> <span class="star"
+							data-value="2">★</span> <span class="star" data-value="3">★</span>
+						<span class="star" data-value="4">★</span> <span class="star"
+							data-value="5">★</span>
+					</div>
+				</div>
+				<div>
+					<div class="average-rating" id="average-rating"></div>
+				</div>
 
+			</section>
+			<section class="comment-panel hidden" id="comment-panel">
+				<button class="close-panel-btn" id="close-comment-btn">×</button>
+				<div class="comment-input-section">
+					<h2 class="comment-title">What do you think of this joke?</h2>
+					<input type="text" id="comment-name" class="comment-name"
+						placeholder="Your name" maxlength="100">
+					<textarea id="comment-text" class="comment-text"
+						placeholder="Write your comment..." maxlength="3000"></textarea>
+					<div class="comment-char-count">
+						<span id="comment-char-count">0</span>/3000
+					</div>
+					<button id="comment-submit-btn">Submit Comment</button>
+				</div>
+				<hr class="comment-divider">
+				<div class="comment-display-section">
+					<h3 class="comments-heading">Comments</h3>
+					<div id="comments-list" class="comments-list">
+						<p class="no-comments">No comments yet</p>
+					</div>
+				</div>
+			</section>
+
+		</div>
 		<nav class="navigation">
 			<div class="nav-item" id="prev-btn">
 				<span class="nav-arrow">&#8592;</span> <span class="nav-label">Previous</span>
@@ -58,10 +82,9 @@
 		</nav>
 
 		<div class="share-container">
+			<button id="comment-btn">Comments</button>
 			<button id="share-btn">Share this joke</button>
 		</div>
-
-
 
 		<footer>
 			<p>
