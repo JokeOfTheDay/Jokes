@@ -1,10 +1,47 @@
 const jokes = [
+  { 
+    date: "2026-09-18", 
+    setup: "Why do pregnant people never go to a baby doctor for check-ups?", 
+    punchline: "They'd rather go to an adult doctor.", 
+    explanation: "The joke treats 'baby doctor' as though the doctor is still a baby himself, rather than a doctor who cares for pregnant people and babies. The punchline contrasts 'baby' with 'adult' for a deliberately literal interpretation." 
+  }, 
+  { 
+    date: "2026-09-17", 
+    setup: "How many South Americans does it take to change a lightbulb?", 
+    punchline: "A Brazilian.", 
+    explanation: "The punchline plays on 'a Brazilian' sounding like the large number 'a brazillion' — an exaggerated way of saying an enormous number." 
+  }, 
+  { 
+    date: "2026-09-16", 
+    setup: "What do you call a female snake?", 
+    punchline: "Misssssssss.", 
+    explanation: "The joke combines the title 'Miss' with the long hissing sound associated with snakes, stretching out the 's' to make it sound like a snake." 
+  }, 
+  { 
+    date: "2026-09-15", 
+    setup: "What is a centipede's favorite Beatle song?",
+    punchline: "I Want to Hold Your Hand, Hand, Hand, Hand, Hand, Hand, Hand, ...", 
+    explanation: "The joke references The Beatles' song 'I Want to Hold Your Hand' and repeats 'hand' because a centipede has many legs, humorously treating each leg as a hand." 
+  }, 
+  { 
+    date: "2026-09-14", 
+    setup: "Why do birds fly south for the winter?", 
+    punchline: "Because it's too far to walk.", 
+    explanation: "Birds really do migrate south for the winter, but the joke pretends they choose to fly simply because walking such a long distance would be impractical." 
+  }, 
+  { 
+    date: "2026-09-11", 
+    setup: "What kind of magic do cows believe in?", 
+    punchline: "MOODOO.", 
+    explanation: "The joke combines 'moo,' the sound a cow makes, with 'voodoo,' a type of magic, creating the pun 'MOODOO.'" 
+  },  
   {
     date: "2026-09-10",
     setup: "What's the worst thing about autocorrect?",
     punchline: "Telling someone they can go duck themselves.",
     explanation: "The joke plays on autocorrect replacing the swear word 'f*ck' with 'duck', so you end up telling someone to 'go duck themselves' instead of the intended insult."
-  },  {
+  },  
+  {
     date: "2026-09-09",
     setup: "How many PMs does it take to change a lightbulb?",
     punchline: "None. They'll just keep adding developers until it's fixed by itself.",
