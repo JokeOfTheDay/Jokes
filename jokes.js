@@ -44,7 +44,7 @@ let currentIndex = 0;
 // Get user's stored rating for a joke
 function getUserRating(jokeDate) {
 	const stored = localStorage.getItem(`joke-rating-${jokeDate}`);
-	return stored ? parseInt(stored) : null;
+	return stored ? parseFloat(stored) : null;
 }
 
 // Store user's rating for a joke
@@ -52,14 +52,18 @@ function storeUserRating(jokeDate, rating) {
 	localStorage.setItem(`joke-rating-${jokeDate}`, rating);
 }
 
-// Update the star display based on current rating
+// Update the star display based on current rating (supports half stars)
 function updateStarDisplay(rating) {
 	ratingStars.forEach(star => {
 		const starValue = parseInt(star.getAttribute("data-value"));
-		if (rating && starValue <= rating) {
+		if (rating >= starValue) {
+			star.classList.remove("half");
 			star.classList.add("active");
-		} else {
+		} else if (rating > starValue - 1) {
+			star.classList.add("half");
 			star.classList.remove("active");
+		} else {
+			star.classList.remove("active", "half");
 		}
 	});
 }
@@ -215,17 +219,30 @@ shareBtn.addEventListener("click", () => {
 	});
 });
 
-// Star rating functionality
-ratingStars.forEach((star, index) => {
-	// Hover effect: highlight star and all previous stars
-	star.addEventListener("mouseenter", (e) => {
-		const hoverValue = parseInt(e.target.getAttribute("data-value"));
+// Star rating functionality with half-star support
+ratingStars.forEach((star) => {
+	// Hover effect with half-star detection
+	star.addEventListener("mousemove", (e) => {
+		const rect = star.getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const isLeftHalf = x < rect.width / 2;
+		
+		const starValue = parseInt(star.getAttribute("data-value"));
+		const hoverValue = isLeftHalf ? starValue - 0.5 : starValue;
+		
+		// Highlight stars based on hover value
 		ratingStars.forEach(s => {
-			const starValue = parseInt(s.getAttribute("data-value"));
-			if (starValue <= hoverValue) {
-				s.style.color = "#ffd700";
+			const sValue = parseInt(s.getAttribute("data-value"));
+			if (sValue < hoverValue) {
+				s.classList.remove("half");
+				s.classList.add("hover-active");
+			} else if (sValue === Math.ceil(hoverValue) && hoverValue % 1 !== 0) {
+				s.classList.add("half", "hover-active");
+			} else if (sValue === hoverValue && hoverValue % 1 === 0) {
+				s.classList.remove("half");
+				s.classList.add("hover-active");
 			} else {
-				s.style.color = "#ccc";
+				s.classList.remove("hover-active", "half");
 			}
 		});
 	});
@@ -235,19 +252,20 @@ ratingStars.forEach((star, index) => {
 document.getElementById("rating-stars").addEventListener("mouseleave", () => {
 	const userRating = getUserRating(availableJokes[currentIndex].date);
 	ratingStars.forEach(star => {
-		const starValue = parseInt(star.getAttribute("data-value"));
-		if (userRating && starValue <= userRating) {
-			star.style.color = "#ffd700";
-		} else {
-			star.style.color = "#ccc";
-		}
+		star.classList.remove("hover-active");
 	});
+	updateStarDisplay(userRating);
 });
 
 // Click to submit rating
 ratingStars.forEach(star => {
 	star.addEventListener("click", (e) => {
-		const rating = parseInt(e.target.getAttribute("data-value"));
+		const rect = star.getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const isLeftHalf = x < rect.width / 2;
+		
+		const starValue = parseInt(star.getAttribute("data-value"));
+		const rating = isLeftHalf ? starValue - 0.5 : starValue;
 		const joke = availableJokes[currentIndex];
 		
 		// Update visual display immediately
