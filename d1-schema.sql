@@ -11,3 +11,14 @@ CREATE TABLE IF NOT EXISTS ratings (
 
 -- Create index for faster lookups by date
 CREATE INDEX IF NOT EXISTS idx_ratings_date ON ratings(date);
+
+
+CREATE TABLE IF NOT EXISTS comments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  joke_date TEXT NOT NULL,
+  name TEXT NOT NULL,
+  comment TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_comments_date ON comments(joke_date);
+
