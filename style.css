@@ -265,20 +265,27 @@ header {
 	user-select: none;
 	position: relative;
 	display: inline-block;
+	font-size: 0;
+}
+
+.star::before {
+	content: '★';
+	font-size: 1.8rem;
 }
 
 .star.active {
 	color: #ffd700;
 }
 
-.star.half::before {
-	content: attr(data-value);
+.star.half::after {
+	content: '★';
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 50%;
 	overflow: hidden;
 	color: #ffd700;
+	font-size: 1.8rem;
 }
 
 .star.hover-active {
@@ -289,14 +296,15 @@ header {
 	color: #ccc;
 }
 
-.star.hover-active.half::before {
-	content: attr(data-value);
+.star.hover-active.half::after {
+	content: '★';
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 50%;
 	overflow: hidden;
 	color: #ffd700;
+	font-size: 1.8rem;
 }
 
 .average-rating {
