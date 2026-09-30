@@ -1,5 +1,23 @@
 const jokes = [
 	{
+		date: "2026-10-07",
+		setup: "Tell MABE to make more jokes",
+		punchline: "and maybe ask if he actually knows any good ones",
+		explanation: "because most of these are pretty lame :p"
+	},
+	{
+		date: "2026-10-06",
+		setup: "Why was the tomato blushing?",
+		punchline: "Because it saw the salad dressing.",
+		explanation: "The tomato blushed because it caught the salad 'dressing' (undressing/changing), playing on the food 'salad dressing' versus 'dressing' as getting dressed."
+	},
+	{
+		date: "2026-10-05",
+		setup: "Why do bees never go to a hotel?",
+		punchline: "Because they always stay at an Air Bee 'n Bee.",
+		explanation: "It's a pun on 'Airbnb', swapping in 'Bee' to make 'Air Bee 'n Bee', a fitting bee-themed place for bees to stay instead of a hotel."
+	},
+	{
 		date: "2026-10-02",
 		setup: "Why are people often attracted to cult leaders?",
 		punchline: "Because they have lots of sects appeal.",
