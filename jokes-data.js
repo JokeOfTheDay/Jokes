@@ -14,7 +14,7 @@ const jokes = [
 	{
 		date: "2026-10-05",
 		setup: "Why do bees never go to a hotel?",
-		punchline: "Because they always stay at an Air Bee 'n Bee.",
+		punchline: "Because they always stay at an Air Bee n Bee.",
 		explanation: "It's a pun on 'Airbnb', swapping in 'Bee' to make 'Air Bee 'n Bee', a fitting bee-themed place for bees to stay instead of a hotel."
 	},
 	{
