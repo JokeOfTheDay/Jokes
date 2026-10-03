@@ -18,6 +18,7 @@ const commentPanel = document.getElementById("comment-panel");
 const commentNameInput = document.getElementById("comment-name");
 const commentTextarea = document.getElementById("comment-text");
 const commentSubmitBtn = document.getElementById("comment-submit-btn");
+const commentInputSection = document.querySelector(".comment-input-section");
 const commentCharCount = document.getElementById("comment-char-count");
 let imageClickCount = 0;
 
@@ -165,8 +166,10 @@ function showJoke(index) {
 	}
 }
 
-
 showJoke(currentIndex);
+commentPanel.classList.remove("hidden");
+commentInputSection.classList.add("hidden");
+fetchAndDisplayComments(availableJokes[currentIndex].date);
 
 punchlineReveal.addEventListener("click", () => {
 	const joke = availableJokes[currentIndex];
@@ -230,13 +233,8 @@ todayBtn.addEventListener("click", () => {
 });
 
 commentBtn.addEventListener("click", () => {
-	const jokeDate = availableJokes[currentIndex].date;
-	commentPanel.classList.toggle("hidden");
-	if (!commentPanel.classList.contains("hidden")) {
-		fetchAndDisplayComments(jokeDate);
-	}
+	commentInputSection.classList.toggle("hidden");
 });
-
 
 commentTextarea.addEventListener("input", () => {
 	commentCharCount.textContent = commentTextarea.value.length;
@@ -329,10 +327,8 @@ commentSubmitBtn.addEventListener("click", async () => {
 
 // Close button handler
 document.getElementById("close-comment-btn").addEventListener("click", () => {
-	commentPanel.classList.add("hidden");
+	commentInputSection.classList.add("hidden");
 });
-
-
 
 shareBtn.addEventListener("click", () => {
 	const joke = availableJokes[currentIndex];
