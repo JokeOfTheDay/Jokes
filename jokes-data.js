@@ -1,9 +1,68 @@
 const jokes = [
 	{
-		date: "2026-10-07",
+		date: "2026-10-21",
 		setup: "Tell MABE to make more jokes",
 		punchline: "and maybe ask if he actually knows any good ones",
 		explanation: "because most of these are pretty lame :p"
+	},	{
+		date: "2026-10-20",
+		setup: "What happened when a scientist tried to capture fog?",
+		punchline: "He mist.",
+		explanation: "A pun on 'mist' and 'missed'. Fog is made of mist, so trying to capture it would inevitably result in mist."
+	},
+	{
+		date: "2026-10-19",
+		setup: "What does a skeleton order at a bar?",
+		punchline: "A beer and a mop.",
+		explanation: "A skeleton has no body to hold liquid, so a mop is needed to clean up the beer that spills through."
+	},
+	{
+		date: "2026-10-16",
+		setup: "What has four wheels and flies?",
+		punchline: "A garbage truck.",
+		explanation: "A play on 'flies' — the insects attracted to garbage, not the action of flying."
+	},
+	{
+		date: "2026-10-15",
+		setup: "What do you call an elephant in a phone booth?",
+		punchline: "Stuck.",
+		explanation: "A literal joke — an elephant is too large to fit in a phone booth, leaving it stuck inside."
+	},
+	{
+		date: "2026-10-14",
+		setup: "How many apples grow on a tree?",
+		punchline: "All of them.",
+		explanation: "The question is not what the amount of apples is on a single tree, but rather how many apples grow on trees compared to apples growing on other plants."
+	},
+	{
+		date: "2026-10-13",
+		setup: "Why is justice best served cold?",
+		punchline: "Otherwise it's just water.",
+		explanation: "'Just ice' sounds like 'justice', so if it's warm, it's just water."
+	},
+	{
+		date: "2026-10-12",
+		setup: "How do you make holy water?",
+		punchline: "You boil the hell out of it.",
+		explanation: "Wordplay combining 'hell' and 'holy water' — boiling the hell out makes it holy."
+	},
+	{
+		date: "2026-10-09",
+		setup: "What kind of frog can jump higher than a house?",
+		punchline: "All of them. Houses can't jump.",
+		explanation: "The joke relies on literal logic. Frogs can jump, but houses cannot, so any frog can jump higher than a house."
+	},
+	{
+		date: "2026-10-08",
+		setup: "Why can't a T-Rex clap its hands?",
+		punchline: "Because it's extinct.",
+		explanation: "One would think a T-Rex can't clap his hands because of his short arms, but it's actually due to the fact that they're all dead."
+	},
+	{
+		date: "2026-10-07",
+		setup: "What kind of dog likes to take a bath?",
+		punchline: "A shampoodle.",
+		explanation: "A pun combining parts of 'shampoo', an item used while bathing, and the 'poodle' dog breed."
 	},
 	{
 		date: "2026-10-06",
