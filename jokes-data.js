@@ -1,10 +1,95 @@
 const jokes = [
 	{
-		date: "2026-10-21",
-		setup: "Tell MABE to make more jokes",
-		punchline: "and maybe ask if he actually knows any good ones",
-		explanation: "because most of these are pretty lame :p"
-	},	{
+		date: "2026-11-13",
+		setup: "Out of jokes again!",
+		punchline: ":(",
+		explanation: "Sad."
+	},
+	{
+		date: "2026-11-12",
+		setup: "Why shouldn't you try to fight a dinosaur?",
+		punchline: "Because you'll probably get jurasskicked.",
+		explanation: "A pun combining 'Jurassic' (the dinosaur era) with 'ass-kicked', meaning you'd be thoroughly beaten by the dinosaur."
+	},
+	{
+		date: "2026-11-11",
+		setup: "Why did the farmer become a musician after his failed harvest?",
+		punchline: "Because he had a ton of sick beets.",
+		explanation: "A pun on 'sick beats' (great music rhythms) and 'beets', the vegetable a farmer would grow."
+	},
+	{
+		date: "2026-11-10",
+		setup: "What do you call a reality TV show for really bad tennis players?",
+		punchline: "Love Island.",
+		explanation: "In tennis, 'love' means a score of zero, so bad players keep scoring 'love' — a pun on the dating show 'Love Island'."
+	},
+	{
+		date: "2026-11-09",
+		setup: "Why do French people eat snails?",
+		punchline: "They don't like fast food.",
+		explanation: "Snails are famously slow, the opposite of 'fast food', so the joke suggests the French prefer slow (snail) food."
+	},
+	{
+		date: "2026-11-06",
+		setup: "What do you call a parrot without wings?",
+		punchline: "A walkie-talkie.",
+		explanation: "A parrot can talk but, with no wings, it can only walk — making it a 'walkie-talkie', a pun on the handheld radio."
+	},
+	{
+		date: "2026-11-05",
+		setup: "What's the best kind of tree to fall out of?",
+		punchline: "A short one.",
+		explanation: "The joke sets up the reader thinking the type of tree influences how someone can fall out of it, but falling from a short tree means a lower drop and less chance of injury."
+	},
+	{
+		date: "2026-11-04",
+		setup: "Why do the workers at the tire changing company always go to bed early?",
+		punchline: "Because their job is tiring work.",
+		explanation: "A pun on 'tiring' (exhausting) and 'tire', the car part they change all day."
+	},
+	{
+		date: "2026-11-03",
+		setup: "Why did the man break up with his cross-eyed wife?",
+		punchline: "She was seeing someone else on the side.",
+		explanation: "A pun — being cross-eyed means literally looking to the side, while 'seeing someone on the side' means having an affair."
+	},
+	{
+		date: "2026-11-02",
+		setup: "What do you call two black birds that are stuck together?",
+		punchline: "Velcrows.",
+		explanation: "A pun combining 'Velcro' (the sticky fastener) with 'crows', the black birds stuck together."
+	},
+	{
+		date: "2026-10-30",
+		setup: "What happened to the woman who confused a glue stick for her lipstick?",
+		punchline: "No idea, she won't say.",
+		explanation: "Using glue instead of lipstick would glue her lips shut, so she literally can't say anything."
+	},
+	{
+		date: "2026-10-29",
+		setup: "What could be the most terrifying thing to find on the planet Mars?",
+		punchline: "Microsoft Teams.",
+		explanation: "A joke poking fun at Microsoft Teams — the implication being that even on a distant, lifeless planet, being stuck with Teams meetings would be the scariest discovery."
+	},
+	{
+		date: "2026-10-28",
+		setup: "How did Darth Vader know what Luke got him for Christmas?",
+		punchline: "He felt his presents.",
+		explanation: "A pun on 'presence' and 'presents' — Darth Vader can sense someone's 'presence' through the Force, while 'presents' are Christmas gifts."
+	},
+	{
+		date: "2026-10-27",
+		setup: "Warning, the next punchline is 18+",
+		punchline: "19",
+		explanation: "A literal reading instead of the expected 'adults only' warning. '18+' means anything greater than 18, so the next number up is simply 19."
+	},
+	{
+		date: "2026-10-26",
+		setup: "What do you call a monkey in a mine field?",
+		punchline: "A baboom.",
+		explanation: "A pun on 'baboon' combined with 'boom' — the sound of an explosion a monkey would trigger in a mine field."
+	},
+	{
 		date: "2026-10-20",
 		setup: "What happened when a scientist tried to capture fog?",
 		punchline: "He mist.",
@@ -224,8 +309,8 @@ const jokes = [
 	{
 		date: "2026-08-31",
 		setup: "What's the fastest thing in the office?",
-		punchline: "A business analyst when he sees the chance to throw a developer under a bus.",
-		explanation: "'Throwing someone under the bus' means blaming others for problems. The joke implies BAs are extremely quick to shift blame to developers. Or anyone else in their line-of-sight. Or just anyone else they can think of."
+		punchline: "A functional analyst when he sees the chance to throw a developer under a bus.",
+		explanation: "'Throwing someone under the bus' means blaming others for problems. The joke implies FAs are extremely quick to shift blame to developers. Or anyone else in their line-of-sight. Or just anyone else they can think of."
 	},
 	{
 		date: "2026-08-28",
