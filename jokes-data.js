@@ -1,9 +1,15 @@
 const jokes = [
 	{
-		date: "2026-11-13",
+		date: "2026-11-16",
 		setup: "Out of jokes again!",
 		punchline: ":(",
 		explanation: "Sad."
+	},
+	{
+		date: "2026-11-13",
+		setup: "How did Darth Vader know what Luke got him for Christmas?",
+		punchline: "He felt his presents.",
+		explanation: "A pun on 'presence' and 'presents' — Darth Vader can sense someone's 'presence' through the Force, while 'presents' are Christmas gifts."
 	},
 	{
 		date: "2026-11-12",
@@ -73,21 +79,21 @@ const jokes = [
 	},
 	{
 		date: "2026-10-28",
-		setup: "How did Darth Vader know what Luke got him for Christmas?",
-		punchline: "He felt his presents.",
-		explanation: "A pun on 'presence' and 'presents' — Darth Vader can sense someone's 'presence' through the Force, while 'presents' are Christmas gifts."
-	},
-	{
-		date: "2026-10-27",
 		setup: "Warning, the next punchline is 18+",
 		punchline: "19",
 		explanation: "A literal reading instead of the expected 'adults only' warning. '18+' means anything greater than 18, so the next number up is simply 19."
 	},
 	{
-		date: "2026-10-26",
+		date: "2026-10-27",
 		setup: "What do you call a monkey in a mine field?",
 		punchline: "A baboom.",
 		explanation: "A pun on 'baboon' combined with 'boom' — the sound of an explosion a monkey would trigger in a mine field."
+	},
+	{
+		date: "2026-10-26",
+		setup: "Why is a great colleague returning from holiday better than a good joke?",
+		punchilne: "The joke makes you smile once. The colleague makes you smile all day.",
+		explanation: "We missed Marie :)"
 	},
 	{
 		date: "2026-10-20",
