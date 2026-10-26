@@ -92,7 +92,7 @@ const jokes = [
 	{
 		date: "2026-10-26",
 		setup: "Why is a great colleague returning from holiday better than a good joke?",
-		punchilne: "The joke makes you smile once. The colleague makes you smile all day.",
+		punchline: "The joke makes you smile once. The colleague makes you smile all day.",
 		explanation: "We missed Marie :)"
 	},
 	{
