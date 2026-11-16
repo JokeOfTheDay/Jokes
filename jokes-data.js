@@ -1,9 +1,15 @@
 const jokes = [
 	{
-		date: "2026-11-16",
+		date: "2026-11-76",
 		setup: "Out of jokes again!",
 		punchline: ":(",
 		explanation: "Sad."
+	},
+	{
+		date: "2026-11-16",
+		setup: "Which of the Muppets is slightly transparent?",
+		punchline: "Kermit the Fog",
+		explanation: "A play on words with Kermit the Frog and fog being slightly transparent."
 	},
 	{
 		date: "2026-11-13",
