@@ -6,6 +6,12 @@ const jokes = [
 		explanation: "Sad."
 	},
 	{
+		date: "2026-11-17",
+		setup: "What's invisible and smells like a hare?",
+		punchline: "A rabbitfart.",
+		explanation: "It's a play on words: a rabbit smells like a hare, and a fart is invisible but smells. 'Rabbitfart' combines the two."
+	},
+	{
 		date: "2026-11-16",
 		setup: "Which of the Muppets is slightly transparent?",
 		punchline: "Kermit the Fog",
