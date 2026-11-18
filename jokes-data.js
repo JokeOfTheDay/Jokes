@@ -6,6 +6,12 @@ const jokes = [
 		explanation: "Sad."
 	},
 	{
+		date: "2026-11-19",
+		setup: "What's the difference between 'gray' and 'grey'?",
+		punchline: "'Gray' is a color, while 'grey' is a colour.",
+		explanation: "They're the same thing, but spelled in American English or British English, just like the words color and colour."
+	},
+	{
 		date: "2026-11-17",
 		setup: "What's invisible and smells like a hare?",
 		punchline: "A rabbitfart.",
