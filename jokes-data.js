@@ -6,6 +6,102 @@ const jokes = [
 		explanation: "Sad."
 	},
 	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-11-",
+		setup: "",
+		punchline: "",
+		explanation: ""
+	},
+	{
+		date: "2026-12-02",
+		setup: "Why should you never ask a genie to make you happy?",
+		punchline: "Because you'll end up living in a cottage with 6 other dwarves.",
+		explanation: "In Snow White, the dwarf named Happy lives in a cottage with six other dwarves. So 'make you Happy' is taken literally, turning you into one of the 7 dwarves."
+	},
+	{
+		date: "2026-12-01",
+		setup: "What gender is a doorbell?",
+		punchline: "Male. It has a dingdong.",
+		explanation: "'Dingdong' is the sound a doorbell makes, but it's also slang for male genitalia, implying the doorbell is male."
+	},
+	{
+		date: "2026-11-30",
+		setup: "What's worse than a box full of snakes?",
+		punchline: "A box that's supposed to be full of snakes.",
+		explanation: "If a box is supposed to be full of snakes but isn't, the snakes have escaped and could be anywhere, which is scarier than knowing where they are."
+	},
+	{
+		date: "2026-11-27",
+		setup: "What do you get when you rearrange the letters of postmen?",
+		punchline: "Angry postmen.",
+		explanation: "The pun is on 'letters' — not the letters in the word, but the mail a postman delivers. If you rearrange (mess up) the letters they're supposed to deliver, you'll get angry postmen."
+	},
+	{
+		date: "2026-11-26",
+		setup: "What key won't open any door?",
+		punchline: "A turkey.",
+		explanation: "'Turkey' ends in '-key', but a turkey is a bird, not an actual key, so it can't open any door."
+	},
+	{
+		date: "2026-11-25",
+		setup: "How many hands do tennis players have?",
+		punchline: "4. Two normal hands and two backhands.",
+		explanation: "A 'backhand' is a tennis stroke, but the joke treats it literally as an extra pair of hands, giving players four."
+	},
+	{
+		date: "2026-11-24",
+		setup: "What's the difference between kinky and perverted?",
+		punchline: "Kinky is when you use a feather. Perverted is when you use a whole chicken.",
+		explanation: "Both involve a feather, but using a single feather is mild (kinky) while using an entire chicken is excessive (perverted). It's about degree."
+	},
+	{
+		date: "2026-11-23",
+		setup: "How many therapistst does it take to change a lightbulb?",
+		punchline: "One, but the lightbuld has to want to change.",
+		explanation: "A spin on the classic lightbulb joke: therapists believe people can only change if they truly want to, so the lightbulb must want to change itself."
+	},
+	{
+		date: "2026-11-20",
+		setup: "Why are there no jokes about airplanes that fly 24/7?",
+		punchline: "Because they never land.",
+		explanation: "A joke needs to 'land' to be funny. Since these planes never land, the jokes never land either, so they don't exist."
+	},
+	{
 		date: "2026-11-19",
 		setup: "What's the difference between 'gray' and 'grey'?",
 		punchline: "'Gray' is a color, while 'grey' is a colour.",
